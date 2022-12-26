@@ -1,24 +1,21 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer } = require('apollo-server')
+const userSchema = require('./user/schema/user.graphql')
+const userResolvers = require('./user/resolvers/userResolvers')
+const UsersAPI = require('./user/datasource/user')
 
-const users = [
-    {
-        nome: "Ana",
-        ativo: true,
-    },
-    {
-        nome: "Marcia",
-        ativo: false,
-    },
-]
+const typeDefs = [userSchema]
+const resolvers = [userResolvers]
 
-//Criando o schema com linguagem chamada SDL - Schema Definition Language
-//O tipo de objeto User está sendo definido por meio da função gql
-const typeDefs = gql `
-    type User {
-        nome: String!
-        ativo: Boolean!
-        email: String
+const server = new ApolloServer({ 
+    typeDefs,
+    resolvers,
+    dataSources: () => {
+        return {
+            usersAPI: new UsersAPI()
+        }
     }
-`
+})
 
-const server = new ApolloServer({ typeDefs, resolvers})
+server.listen().then(({url}) => {
+    console.log(`Servidor rodando na porta ${url}`)
+})

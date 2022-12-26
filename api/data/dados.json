@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 2,
+      "id": 1,
       "nome": "Ana Torre",
       "ativo": true,
       "email": "a@a.com",
@@ -16,10 +16,10 @@
     },
     {
       "id": 3,
-      "nome": "Flavia Lins",
+      "nome": "Flavio Jonas",
       "ativo": true,
-      "email": "f@f.com",
-      "role": 1
+      "email": "anderson@studioaweb.com.br",
+      "role": 3
     },
     {
       "id": 4,
