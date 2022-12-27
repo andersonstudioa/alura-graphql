@@ -15,11 +15,12 @@
       "role": 1
     },
     {
-      "id": 3,
-      "nome": "Flavio Jonas",
+      "nome": "xxx",
       "ativo": true,
-      "email": "anderson@studioaweb.com.br",
-      "role": 3
+      "email": "x@y",
+      "role": 1,
+      "createdAt": "2022-12-26T00:00:00.000Z",
+      "id": 3
     },
     {
       "id": 4,
